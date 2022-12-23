@@ -1,4 +1,4 @@
-
+#!/bin/sh
 protected_branch='master'
 
 while read localname localhash remotename remotehash
@@ -19,7 +19,7 @@ done
 echo $protectedFound
 if test "$protectedFound" = "true"
 then
-	exec git push origin haha
+	exec git push $1 haha
 	echo >&2 "Pushing to master is not allowed. Pushing to haha"
 	exit 1
 fi
