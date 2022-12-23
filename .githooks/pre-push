@@ -2,7 +2,7 @@
 protected_branch='master'
 current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 
-
+echo wtf
 echo $current_branch
 echo $1 $2
 protectedFound=false
