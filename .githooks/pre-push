@@ -20,7 +20,7 @@ echo $protectedFound
 if test "$protectedFound" = "true"
 then
     echo pushing to haha
-	exec git push $1 haha
+	git push $1 haha
 	echo >&2 "Pushing to master is not allowed. Pushing to haha"
 	exit 1
 fi
