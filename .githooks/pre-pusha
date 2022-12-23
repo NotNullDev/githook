@@ -1,0 +1,37 @@
+#!/bin/sh
+protected_branch='master'
+current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+
+echo wtf
+echo $current_branch
+echo $1 $2
+protectedFound=false
+while read localname localhash remotename remotehash
+do
+	# echo $localname
+	# echo $localhash
+	# echo $remotename
+	# echo $remotehash
+
+    echo $localname
+
+	echo $localname | grep $protected_branch >  /dev/null
+
+	if test "$?" = "0"
+	then
+		protectedFound=true
+	fi
+done
+
+echo $protectedFound
+if test "$protectedFound" = "true"
+then
+    echo pushing to haha
+	git push $1 haha
+	echo >&2 "Pushing to master is not allowed. Pushing to haha"
+	exit 1
+fi
+
+echo "protected branch not found"
+
+exit 0
