@@ -13,7 +13,7 @@ do
 	# echo $remotename
 	# echo $remotehash
 
-	echo $localname | grep $protected_branch >  /dev/null
+	echo $remotename | grep $protected_branch >  /dev/null
 
 	if test "$?" = "0"
 	then
