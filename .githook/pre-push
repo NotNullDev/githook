@@ -23,6 +23,7 @@ do
 done
 
 echo $protectedFound
+
 if test $protectedFound = "true"
 then
 	exec git push $1 $redirect_to
