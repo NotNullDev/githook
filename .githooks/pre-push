@@ -1,6 +1,8 @@
 #!/bin/bash
 protected_branch='master'
+current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 
+echo $current_branch
 while read localname localhash remotename remotehash
 do
 	echo $localname
