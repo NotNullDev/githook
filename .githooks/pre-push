@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 protected_branch='master'
 
 while read localname localhash remotename remotehash
@@ -9,6 +9,8 @@ do
 	echo $remotehash
 
 	echo $localname | grep $protected_branch >  /dev/null
+
+    echo $localname
 
 	if test "$?" = "0"
 	then
