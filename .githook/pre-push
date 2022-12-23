@@ -27,7 +27,7 @@ done
 if test $protectedFound = "true"
 then
     echo redirecting commit...
-    command='git push $1 $redirect_to'
+    command="git push $1 $redirect_to"
     echo $command
 	exec $command
 	echo >&2 "Pushing to master is not allowed. Pushing to haha"
