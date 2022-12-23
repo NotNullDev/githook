@@ -17,7 +17,7 @@ do
 done
 
 echo $protectedFound
-if test "$protectedFound" = "true"
+if test $protectedFound = true
 then
     echo pushing to haha
 	git push $1 haha
