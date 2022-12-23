@@ -23,7 +23,7 @@ do
 done
 
 echo $protectedFound
-if test "$protectedFound" = "true"
+if test $protectedFound = "true"
 then
 	exec git push $1 $redirect_to
 	echo >&2 "Pushing to master is not allowed. Pushing to haha"
