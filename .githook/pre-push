@@ -22,18 +22,17 @@ do
 	fi
 done
 
-echo $protectedFound
+# echo $protectedFound
 
 if test $protectedFound = "true"
 then
-echo ok
-    # echo pushhing
-	# exec git push $1 $redirect_to
-	# echo >&2 "Pushing to master is not allowed. Pushing to haha"
+    echo redirecting commit...
+	exec git push $1 $redirect_to
+	echo >&2 "Pushing to master is not allowed. Pushing to haha"
 	exit 1
 fi
-echo not ok
-exit 1;
+# echo not ok
+# exit 1;
 
 echo "protected branch not found"
 
