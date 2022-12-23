@@ -2,14 +2,14 @@
 protected_branch='master'
 current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 
-echo $current_branch
-echo $1 $2
+# echo $current_branch
+# echo $1 $2
 protectedFound=false
 while read localname localhash remotename remotehash
 do
-	# echo $localname
+	echo $localname
 	# echo $localhash
-	# echo $remotename
+	echo $remotename
 	# echo $remotehash
 
 	echo $remotename | grep $protected_branch >  /dev/null
